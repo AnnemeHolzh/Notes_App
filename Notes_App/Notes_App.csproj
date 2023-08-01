@@ -78,6 +78,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\ViewAllNotesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Main_ButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,11 +92,15 @@
     <Compile Include="MVVM\Model\NotesListClass.cs" />
     <Compile Include="MVVM\ViewModel\Main_ViewModel.cs" />
     <Compile Include="MVVM\ViewModel\NewNote_ViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ViewAllNotesViewModel.cs" />
     <Compile Include="MVVM\View\Home_View.xaml.cs">
       <DependentUpon>Home_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\NewNotePage.xaml.cs">
       <DependentUpon>NewNotePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ViewAllNotesView.xaml.cs">
+      <DependentUpon>ViewAllNotesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="NOTES\Notebook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
