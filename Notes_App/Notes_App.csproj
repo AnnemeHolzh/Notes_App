@@ -75,6 +75,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Model\NotesClass.cs" />
     <Compile Include="MVVM\ViewModel\Main_ViewModel.cs" />
     <Compile Include="MVVM\View\NewNotePage.xaml.cs">
       <DependentUpon>NewNotePage.xaml</DependentUpon>
@@ -108,7 +109,6 @@
   <ItemGroup>
     <Folder Include="Fonts\" />
     <Folder Include="Images\" />
-    <Folder Include="MVVM\Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
