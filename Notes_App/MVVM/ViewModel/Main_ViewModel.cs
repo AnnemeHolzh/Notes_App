@@ -15,6 +15,9 @@ namespace Notes_App.MVVM.ViewModel
         public RelayCommand NewNoteCommand { get; set; }
 
         public NewNotePage NewNoteVM { get; set; }
+        public RelayCommand HomeCommand { get; set; }
+
+        public Home_View HomeVM { get; set; }
 
         private object _currentView;
         public object CurrentView
@@ -30,15 +33,15 @@ namespace Notes_App.MVVM.ViewModel
         public Main_ViewModel()
         {
             // Instantiate view models for the home page, all recipes page, and new recipe page
-            NewNoteVM = new NewNotePage();
+            HomeVM = new Home_View();
 
             // Set the current view to the home page initially
-            CurrentView = NewNoteVM;
+            CurrentView = HomeVM;
 
             // Assign commands to navigate to different views
-            NewNoteCommand = new RelayCommand(o =>
+            HomeCommand = new RelayCommand(o =>
             {
-                CurrentView = NewNoteVM;
+                CurrentView = HomeVM;
             });
 
         }
