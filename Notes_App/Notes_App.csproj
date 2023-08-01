@@ -111,7 +111,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Fonts\Panton-Trial-Bold.ttf" />
+    <Resource Include="Fonts\Panton.ttf" />
     <Resource Include="Fonts\Panton-Trial-ExtraBold.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

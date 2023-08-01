@@ -47,18 +47,15 @@
                 Margin="9,10,0,17"
                 Background="#949494"
                 CornerRadius="10">
-                <Button
+                <RadioButton
                     Width="162"
                     Height="43"
                     Margin="14,10,15,479"
-                    Content="Home"
+                     Content="View Recipes"
+                    FontFamily="/Fonts/#Panton"
                     Style="{StaticResource RoundedButtonStyle}">
 
-                    <Button.FontFamily>
-                        <FontFamily>/Notes_App;component/Fonts/#Panton-Trial-Bold</FontFamily>
-                    </Button.FontFamily>
-
-                </Button>
+                </RadioButton>
             </Border>
 
             <ContentControl
