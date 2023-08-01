@@ -9,6 +9,13 @@
     d:DesignWidth="733"
     mc:Ignorable="d">
     <Border CornerRadius="10" Background="#949494">
+        <Border.Effect>
+            <DropShadowEffect
+                            BlurRadius="4"
+                            Opacity="0.6"
+                            ShadowDepth="4"
+                            Color="#000000" />
+        </Border.Effect>
         <Canvas>
         </Canvas>
     </Border>

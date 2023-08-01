@@ -5,14 +5,53 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
                     <Grid>
-                        <Border CornerRadius="10" Background="#EEEEEE">
+                        <Border x:Name="MainBorder" CornerRadius="10" Background="#EEEEEE">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
                             </ContentPresenter>
                             <Border.Effect>
-                                <DropShadowEffect ShadowDepth="3" Color="#000000" Opacity="0.40" BlurRadius="4"/>
+                                <DropShadowEffect ShadowDepth="3" Color="#000000" Opacity="0.60" BlurRadius="4"/>
                             </Border.Effect>
+                            <Border.RenderTransform>
+                                <TranslateTransform Y="0"/>
+                                <!-- Initial translation value -->
+                            </Border.RenderTransform>
                         </Border>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Hover Trigger with Smooth Animation -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="MainBorder" Property="Background" Value="#D0D0D0"/>
+                            <!-- Change the background color when hovering -->
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="MainBorder"
+                                            Storyboard.TargetProperty="(Border.RenderTransform).(TranslateTransform.Y)"
+                                            To="-5" Duration="0:0:0.1"/>
+                                        <!-- Animation duration of 0.1 seconds -->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="MainBorder"
+                                            Storyboard.TargetProperty="(Border.RenderTransform).(TranslateTransform.Y)"
+                                            To="0" Duration="0:0:0.1"/>
+                                        <!-- Reverse the animation to move back to the original position -->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <!-- Click Trigger -->
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="MainBorder" Property="Background" Value="#A0A0A0"/>
+                            <!-- Change the background color when clicked/checked -->
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

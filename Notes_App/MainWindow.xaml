@@ -42,20 +42,130 @@
 
             </Grid.RowDefinitions>
 
+            <Canvas Grid.Column="1">
+                <Border
+                    Canvas.Left="656"
+                    Canvas.Top="18"
+                    Width="40"
+                    Height="40"
+                    Panel.ZIndex="2"
+                    Background="#FFC9C9C9"
+                    CornerRadius="20">
+                    <Button
+                        Width="40"
+                        Height="40"
+                        Background="Transparent"
+                        BorderThickness="0">
+                        <!--  Any content or controls you want to display inside the button  -->
+                        <!--  For example, using an image as the button content  -->
+                        <Image
+                            Width="20"
+                            Height="20"
+                            Source="Images/Search.png" />
+                    </Button>
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="4"
+                            Opacity="0.6"
+                            ShadowDepth="4"
+                            Color="#000000" />
+                    </Border.Effect>
+                </Border>
+
+                <Border
+                    Width="657"
+                    Height="47"
+                    Margin="44,14,-130,14"
+                    Panel.ZIndex="0"
+                    Background="#949494"
+                    CornerRadius="23.5">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="4"
+                            Opacity="0.6"
+                            ShadowDepth="4"
+                            Color="#000000" />
+                    </Border.Effect>
+                    <!--  Any content that you want to display as the background  -->
+                </Border>
+                <Border
+                    Canvas.Left="49"
+                    Canvas.Top="18"
+                    Width="647"
+                    Height="40"
+                    Panel.ZIndex="1"
+                    Background="#EEEEEE"
+                    CornerRadius="20">
+                    <!--  Any content or controls for user input (e.g., TextBox, ComboBox, etc.)  -->
+                    <!--  For example, using a TextBox as the search input  -->
+                    <TextBox
+                        Margin="5"
+                        VerticalContentAlignment="Center"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        FontSize="16" />
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="4"
+                            Opacity="0.3"
+                            ShadowDepth="4"
+                            Color="#000000" />
+                    </Border.Effect>
+                </Border>
+
+
+
+
+            </Canvas>
             <Border
                 Grid.Row="1"
                 Margin="9,10,0,17"
                 Background="#949494"
                 CornerRadius="10">
-                <RadioButton
-                    Width="162"
-                    Height="43"
-                    Margin="14,10,15,479"
-                     Content="View Recipes"
-                    FontFamily="/Fonts/#Panton"
-                    Style="{StaticResource RoundedButtonStyle}">
+                <Border.Effect>
+                    <DropShadowEffect
+                            BlurRadius="4"
+                            Opacity="0.6"
+                            ShadowDepth="4"
+                            Color="#000000" />
+                </Border.Effect>
+                <Canvas>
+                    <RadioButton
+                        Width="162"
+                        Height="43"
+                        Margin="14,10,15,479"
+                        Content="Home"
+                        FontFamily="Panton-Trial ExtraBold"
+                        FontSize="20"
+                        Foreground="#414141"
+                        Style="{StaticResource RoundedButtonStyle}" />
+                    <RadioButton
+                        Canvas.Left="14"
+                        Canvas.Top="65"
+                        Width="162"
+                        Height="43"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Content="New Note"
+                        FontFamily="Panton-Trial ExtraBold"
+                        FontSize="20"
+                        Foreground="#414141"
+                        Style="{StaticResource RoundedButtonStyle}" />
+                    <RadioButton
+                        Canvas.Left="14"
+                        Canvas.Top="119"
+                        Width="162"
+                        Height="43"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="View All Notes"
+                        FontFamily="Panton-Trial ExtraBold"
+                        FontSize="20"
+                        Foreground="#414141"
+                        Style="{StaticResource RoundedButtonStyle}" />
 
-                </RadioButton>
+                </Canvas>
+
             </Border>
 
             <ContentControl
