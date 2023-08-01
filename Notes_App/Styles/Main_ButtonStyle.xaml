@@ -11,7 +11,7 @@
 
     <Style x:Key="RoundedButtonStyle" TargetType="{x:Type RadioButton}">
         <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsMouseOver, Converter={StaticResource RandomColorConverter}}" />
-        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Foreground" Value="#414141" />
         <!--  Default font color  -->
         <Setter Property="Template">
             <Setter.Value>
@@ -32,7 +32,7 @@
                                             <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsMouseOver, Converter={StaticResource RandomColorConverter}}" />
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsMouseOver}" Value="False">
-                                                    <Setter Property="Foreground" Value="Black" />
+                                                    <Setter Property="Foreground" Value="#414141" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
