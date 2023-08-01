@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\Model\NotesClass.cs" />
+    <Compile Include="MVVM\Model\NotesListClass.cs" />
     <Compile Include="MVVM\ViewModel\Main_ViewModel.cs" />
     <Compile Include="MVVM\ViewModel\NewNote_ViewModel.cs" />
     <Compile Include="MVVM\View\Home_View.xaml.cs">
