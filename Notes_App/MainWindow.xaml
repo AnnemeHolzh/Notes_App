@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:view="clr-namespace:Notes_App.MVVM.View"
     xmlns:viewModel="clr-namespace:Notes_App.MVVM.ViewModel"
-    Title="MainWindow"
+    Title="Your Notes"
     Width="950"
     Height="650"
     mc:Ignorable="d">

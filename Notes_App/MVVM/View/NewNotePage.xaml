@@ -5,14 +5,45 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Notes_App.MVVM.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="462.04"
-    Background="Aquamarine"
-    mc:Ignorable="d" Width="700">
+    Width="700"
+    d:DesignHeight="462"
+    Background="Transparent"
+    mc:Ignorable="d">
     <Canvas>
-        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" Width="680" Height="42" Canvas.Left="10" Canvas.Top="10"/>
-        <TextBox TextWrapping="Wrap" Text="Title" Width="680" Height="345" Canvas.Left="10" Canvas.Top="69" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Button Content="Save Note" Canvas.Left="534" Canvas.Top="419" Height="33" Width="156" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button Content="Clear" Canvas.Left="373" Canvas.Top="419" Height="33" Width="156" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox
+            Canvas.Left="10"
+            Canvas.Top="10"
+            Width="680"
+            Height="42"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Title"
+            TextWrapping="Wrap" />
+        <TextBox
+            Canvas.Left="10"
+            Canvas.Top="69"
+            Width="680"
+            Height="345"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Text="Title"
+            TextWrapping="Wrap" />
+        <Button
+            Canvas.Left="534"
+            Canvas.Top="419"
+            Width="156"
+            Height="33"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="Save Note" />
+        <Button
+            Canvas.Left="373"
+            Canvas.Top="419"
+            Width="156"
+            Height="33"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="Clear" />
 
     </Canvas>
 </UserControl>

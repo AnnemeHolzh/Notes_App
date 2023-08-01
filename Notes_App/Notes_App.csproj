@@ -79,6 +79,7 @@
     <Compile Include="MVVM\View\NewNotePage.xaml.cs">
       <DependentUpon>NewNotePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NOTES\Notebook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
