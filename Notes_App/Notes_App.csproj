@@ -69,7 +69,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVVM\View\Home_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\NewNotePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Main_ButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -77,6 +85,10 @@
   <ItemGroup>
     <Compile Include="MVVM\Model\NotesClass.cs" />
     <Compile Include="MVVM\ViewModel\Main_ViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\NewNote_ViewModel.cs" />
+    <Compile Include="MVVM\View\Home_View.xaml.cs">
+      <DependentUpon>Home_View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\NewNotePage.xaml.cs">
       <DependentUpon>NewNotePage.xaml</DependentUpon>
     </Compile>
@@ -98,6 +110,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fonts\Panton-Trial-Bold.ttf" />
+    <Resource Include="Fonts\Panton-Trial-ExtraBold.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,7 +121,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Fonts\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
