@@ -3,7 +3,7 @@
 namespace Notes_App.MVVM.Model
 {
     /// <summary>
-    /// used o create a NoteClass Object that stores the notes title, content and the last time it was edited
+    /// used to create a NoteClass Object that stores the notes title, content and the last time it was edited
     /// </summary>
     public class NotesClass
     {
