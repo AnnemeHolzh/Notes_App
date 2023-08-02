@@ -4,11 +4,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Notes_App.MVVM.View"
+    xmlns:viewModel="clr-namespace:Notes_App.MVVM.ViewModel"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="733"
     d:DesignHeight="546"
     Background="#949494"
     mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <viewModel:NewNote_ViewModel/>
+    </UserControl.DataContext>
+
     <Canvas>
         <TextBox
             Canvas.Left="10"
@@ -44,6 +50,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="Clear" />
+        <!--You can remove this btn the clear functionruns automaticly after adding a note-->
 
     </Canvas>
 </UserControl>

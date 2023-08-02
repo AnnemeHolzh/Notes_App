@@ -6,16 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Notes_App.Core.ObservableObjectsClass;
-using static Notes_App.Core.RelayCommandsClass;
+using static Notes_App.Core.RelayCommandClass;
 
 namespace Notes_App.MVVM.ViewModel
 {
     internal class Main_ViewModel : ObservableObjectsClass
     { 
-        public RelayCommand NewNoteCommand { get; set; }
+        public Core.RelayCommandClass NewNoteCommand { get; set; }
 
         public NewNotePage NewNoteVM { get; set; }
-        public RelayCommand HomeCommand { get; set; }
+        public Core.RelayCommandClass HomeCommand { get; set; }
 
         public Home_View HomeVM { get; set; }
 
@@ -39,7 +39,7 @@ namespace Notes_App.MVVM.ViewModel
             CurrentView = HomeVM;
 
             // Assign commands to navigate to different views
-            HomeCommand = new RelayCommand(o =>
+            HomeCommand = new Core.RelayCommandClass(o =>
             {
                 CurrentView = HomeVM;
             });
