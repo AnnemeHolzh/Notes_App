@@ -23,7 +23,7 @@
             Height="42"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="Title"
+            Text="{Binding NoteTitle}"
             TextWrapping="Wrap" />
         <TextBox
             Canvas.Left="10"
@@ -32,7 +32,7 @@
             Height="345"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Text="Title"
+            Text="{Binding NoteContent}"
             TextWrapping="Wrap" />
         <Button
             Canvas.Left="534"
