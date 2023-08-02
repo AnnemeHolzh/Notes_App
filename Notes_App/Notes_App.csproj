@@ -134,9 +134,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Note_Grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Note_Mint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Note_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Note_DarkBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Note_Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Note_LightBlue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
