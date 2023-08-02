@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Notes_App.MVVM.Model;
+using Notes_App.MVVM.ViewModel;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Notes_App.MVVM.View
 {
@@ -20,14 +12,36 @@ namespace Notes_App.MVVM.View
     /// </summary>
     public partial class ViewAllNotesView : UserControl
     {
+        /// <summary>
+        /// constructor
+        /// </summary>
         public ViewAllNotesView()
         {
             InitializeComponent();
         }
+        //___________________________________________________________________________________________________________
 
-        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Event handler for when a note is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+            Button ClickedButton = (Button)sender;
+
+            String NoteTitle = ClickedButton.Content.ToString();
+
+            ViewAllNotesViewModel viewModel = (ViewAllNotesViewModel)DataContext;
+            NotesClass SelectedNote = viewModel.Notes.FirstOrDefault(note => note.GetTitle() == NoteTitle);
+
+            if (SelectedNote != null)
+            {
+                MessageBox.Show($"You clicked {NoteTitle}");// make click open view with selected note
+            }
+            //___________________________________________________________________________________________________________
         }
     }
 }
+//____________________________________EOF_________________________________________________________________________
