@@ -1,16 +1,23 @@
 ﻿using Notes_App.Core;
 using Notes_App.MVVM.View;
+using Notes_App.UI_Code;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
+using System.Windows.Media.Imaging;
 using static Notes_App.Core.ObservableObjectsClass;
 using static Notes_App.Core.RelayCommandClass;
+using System.Windows.Controls;
+using System.ComponentModel;
 
 namespace Notes_App.MVVM.ViewModel
 {
-    internal class Main_ViewModel : ObservableObjectsClass
+    internal class Main_ViewModel : ObservableObjectsClass, INotifyPropertyChanged
     { 
         public Core.RelayCommandClass NewNoteCommand { get; set; }
 
@@ -31,8 +38,12 @@ namespace Notes_App.MVVM.ViewModel
             {
                 _currentView = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(CurrentView));
+                OnPropertyChanged(nameof(IsHomeView));
             }
         }
+
+        public bool IsHomeView => CurrentView == HomeVM;
 
         public Main_ViewModel()
         {
@@ -60,6 +71,14 @@ namespace Notes_App.MVVM.ViewModel
                 CurrentView = ViewAllVM;
             });
 
+          
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
