@@ -3,11 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:Notes_App.UI_Code">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary>
-            <local:RandomColorConverter x:Key="RandomColorConverter" />
-        </ResourceDictionary>
-    </ResourceDictionary.MergedDictionaries>
+    <local:RandomColorConverter x:Key="RandomColorConverter" />
 
     <Style x:Key="RoundedButtonStyle" TargetType="{x:Type RadioButton}">
         <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsMouseOver, Converter={StaticResource RandomColorConverter}}" />
