@@ -2,8 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Notes_App"
+             xmlns:viewModel="clr-namespace:Notes_App.MVVM.ViewModel"
+             xmlns:view="clr-namespace:Notes_App.MVVM.View"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type viewModel:ViewAllNotesViewModel}">
+                <view:ViewAllNotesView/>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

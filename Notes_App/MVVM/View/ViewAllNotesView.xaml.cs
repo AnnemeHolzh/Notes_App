@@ -24,5 +24,10 @@ namespace Notes_App.MVVM.View
         {
             InitializeComponent();
         }
+
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
