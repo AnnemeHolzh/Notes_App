@@ -20,10 +20,14 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Main_ButtonStyle.xaml" />
+                <ResourceDictionary Source="Styles/SearchButton_ButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-        
+
+
     </Window.Resources>
+
+
 
     <Border Background="#EEEEEE" CornerRadius="20">
         <Grid>
@@ -45,41 +49,39 @@
 
             <Canvas Grid.Column="1">
                 <Border
-    Canvas.Left="656"
-    Canvas.Top="18"
-    Width="40"
-    Height="40"
-    Panel.ZIndex="2"
-    Background="#FFC9C9C9"
-    CornerRadius="20">
+                    Canvas.Left="656"
+                    Canvas.Top="18"
+                    Width="40"
+                    Height="40"
+                    Panel.ZIndex="2"
+                    Background="#FFC9C9C9"
+                    CornerRadius="20">
                     <Button
-        Width="40"
-        Height="40"
-        Background="Transparent"
-        BorderThickness="0">
-                        <!-- Define a custom ControlTemplate for the Button -->
+                        Width="40"
+                        Height="40"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Style="{StaticResource SearchButtonStyle}">
+                        <!--  Define a custom ControlTemplate for the Button  -->
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <ContentPresenter
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center" />
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </ControlTemplate>
                         </Button.Template>
                         <!--  Any content or controls you want to display inside the button  -->
                         <!--  For example, using an image as the button content  -->
-                        <Image
-            Width="20"
-            Height="20"
-            Source="Images/Search.png" />
+
+                        
                     </Button>
                     <Border.Effect>
                         <DropShadowEffect
-            BlurRadius="4"
-            Opacity="0.6"
-            ShadowDepth="4"
-            Color="#000000" />
+                            BlurRadius="4"
+                            Opacity="0.6"
+                            ShadowDepth="4"
+                            Color="#000000" />
                     </Border.Effect>
                 </Border>
+
                 <Border
                     Width="657"
                     Height="47"
@@ -132,10 +134,10 @@
                 CornerRadius="10">
                 <Border.Effect>
                     <DropShadowEffect
-                            BlurRadius="4"
-                            Opacity="0.6"
-                            ShadowDepth="4"
-                            Color="#000000" />
+                        BlurRadius="4"
+                        Opacity="0.6"
+                        ShadowDepth="4"
+                        Color="#000000" />
                 </Border.Effect>
                 <Canvas>
                     <RadioButton
