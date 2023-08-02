@@ -3,22 +3,34 @@ using Notes_App.MVVM.View;
 using Notes_App.UI_Code;
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using static Notes_App.Core.ObservableObjectsClass;
 using static Notes_App.Core.RelayCommandClass;
-using System.Windows.Controls;
-using System.ComponentModel;
 
 namespace Notes_App.MVVM.ViewModel
 {
-    internal class Main_ViewModel : ObservableObjectsClass, INotifyPropertyChanged
-    { 
+    public class Main_ViewModel : ObservableObjectsClass, INotifyPropertyChanged
+    {
+        private bool isThoughtBubbleVisible;
+        public bool IsThoughtBubbleVisible
+        {
+            get { return isThoughtBubbleVisible; }
+            set
+            {
+                if (isThoughtBubbleVisible != value)
+                {
+                    isThoughtBubbleVisible = value;
+                    OnPropertyChanged(nameof(IsThoughtBubbleVisible));
+                }
+            }
+        }
+
         public Core.RelayCommandClass NewNoteCommand { get; set; }
 
         public NewNotePage NewNoteVM { get; set; }
@@ -38,12 +50,15 @@ namespace Notes_App.MVVM.ViewModel
             {
                 _currentView = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(CurrentView));
-                OnPropertyChanged(nameof(IsHomeView));
             }
         }
+        // INotifyPropertyChanged implementation
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public bool IsHomeView => CurrentView == HomeVM;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public Main_ViewModel()
         {
@@ -55,30 +70,30 @@ namespace Notes_App.MVVM.ViewModel
             // Set the current view to the home page initially
             CurrentView = HomeVM;
 
+            IsThoughtBubbleVisible = true;
+
             // Assign commands to navigate to different views
             HomeCommand = new Core.RelayCommandClass(o =>
             {
                 CurrentView = HomeVM;
+                IsThoughtBubbleVisible = true;
             });
+
 
             NewNoteCommand = new Core.RelayCommandClass(o =>
             {
                 CurrentView = NewNoteVM;
+                IsThoughtBubbleVisible = false; // Set to false when navigating to other views
             });
 
             ViewAllCommand = new Core.RelayCommandClass(o =>
             {
                 CurrentView = ViewAllVM;
+                IsThoughtBubbleVisible = false; // Set to false when navigating to other views
             });
 
-          
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

@@ -2,14 +2,16 @@
     x:Class="Notes_App.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:boolean="clr-namespace:Notes_App.UI_Code"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Notes_App"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:view="clr-namespace:Notes_App.MVVM.View"
     xmlns:viewModel="clr-namespace:Notes_App.MVVM.ViewModel"
-    xmlns:local="clr-namespace:Notes_App"
     Title="Your Notes"
     Width="950"
     Height="650"
+    Background="#EEEEEE"
     mc:Ignorable="d">
 
     <Window.DataContext>
@@ -22,185 +24,194 @@
                 <ResourceDictionary Source="Styles/Main_ButtonStyle.xaml" />
                 <ResourceDictionary Source="Styles/SearchButton_ButtonStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <!--  Declare the BooleanToVisibilityConverter in the Window.Resources  -->
+            <boolean:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <!-- Row for the image -->
-            <RowDefinition Height="Auto"/>
-            <!-- Row for the views -->
+            <RowDefinition Height="*" />
+            <!--  Row for the image  -->
+            <RowDefinition Height="Auto" />
+            <!--  Row for the views  -->
         </Grid.RowDefinitions>
 
-        <!-- Add an Image in the first row to cover the entire MainWindow -->
-        <Image Source="/Images/ThoughtBubble.png"/>
- 
-    <Border Background="#EEEEEE" CornerRadius="20">
-      
-        <Grid>
+        <!--  Add an Image in the first row to cover the entire MainWindow  -->
 
-            <Grid.ColumnDefinitions>
+        <Border CornerRadius="20">
 
-                <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="137*" />
-                <ColumnDefinition Width="43*" />
+            <Grid>
 
-            </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="137*" />
+                    <ColumnDefinition Width="43*" />
 
-                <RowDefinition Height="75" />
-                <RowDefinition />
+                </Grid.ColumnDefinitions>
 
-            </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="75" />
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
 
 
-            <Grid Grid.Column="1" Grid.ColumnSpan="2">
-                <Canvas>
-                  
-                    <Button
-                        x:Name="SearchBtn"
-                        Grid.Column="2"
-                        Canvas.Left="655"
-                        Canvas.Top="16"
-                        Width="46"
-                        Height="45"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Top"
-                        Panel.ZIndex="2"
-                        BorderBrush="{x:Null}"
-                        BorderThickness="0"
-                        Click="Button_Click"
-                        Content="Go"
-                        FontFamily="/Fonts/#Panton-Trial ExtraBold"
-                        FontSize="20"
-                        Style="{StaticResource SearchButtonStyle}" />
-                    <Border>
+                <Grid Grid.Column="1" Grid.ColumnSpan="2">
+                    <Canvas>
 
-                        <Border.Effect>
-                            <DropShadowEffect
-                                BlurRadius="4"
-                                Opacity="0.6"
-                                ShadowDepth="4"
-                                Color="#000000" />
-                        </Border.Effect>
-
-                    </Border>
-
-                    <Border
-                        Width="657"
-                        Height="47"
-                        Margin="44,14,-130,14"
-                        Panel.ZIndex="0"
-                        Background="#949494"
-                        CornerRadius="23.5">
-                        <Border.Effect>
-                            <DropShadowEffect
-                                BlurRadius="4"
-                                Opacity="0.6"
-                                ShadowDepth="4"
-                                Color="#000000" />
-                        </Border.Effect>
-                        <!--  Any content that you want to display as the background  -->
-                    </Border>
-                    <Border
-                        Canvas.Left="49"
-                        Canvas.Top="18"
-                        Width="647"
-                        Height="40"
-                        Panel.ZIndex="1"
-                        Background="#EEEEEE"
-                        CornerRadius="20">
-                        <!--  Any content or controls for user input (e.g., TextBox, ComboBox, etc.)  -->
-                        <!--  For example, using a TextBox as the search input  -->
-                        <TextBox
-                            Margin="5"
-                            VerticalContentAlignment="Center"
-                            Background="{x:Null}"
+                        <Button
+                            x:Name="SearchBtn"
+                            Grid.Column="2"
+                            Canvas.Left="655"
+                            Canvas.Top="16"
+                            Width="46"
+                            Height="45"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Panel.ZIndex="2"
                             BorderBrush="{x:Null}"
-                            FontSize="16" />
-                        <Border.Effect>
-                            <DropShadowEffect
-                                BlurRadius="4"
-                                Opacity="0.3"
-                                ShadowDepth="4"
-                                Color="#000000" />
-                        </Border.Effect>
-                    </Border>
+                            BorderThickness="0"
+                            Click="Button_Click"
+                            Content="Go"
+                            FontFamily="/Fonts/#Panton-Trial ExtraBold"
+                            FontSize="20"
+                            Style="{StaticResource SearchButtonStyle}" />
+                        <Border>
 
-                </Canvas>
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="4"
+                                    Opacity="0.6"
+                                    ShadowDepth="4"
+                                    Color="#000000" />
+                            </Border.Effect>
+
+                        </Border>
+
+                        <Border
+                            Width="657"
+                            Height="47"
+                            Margin="44,14,-130,14"
+                            Panel.ZIndex="0"
+                            Background="#949494"
+                            CornerRadius="23.5">
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="4"
+                                    Opacity="0.6"
+                                    ShadowDepth="4"
+                                    Color="#000000" />
+                            </Border.Effect>
+                            <!--  Any content that you want to display as the background  -->
+                        </Border>
+                        <Border
+                            Canvas.Left="49"
+                            Canvas.Top="18"
+                            Width="647"
+                            Height="40"
+                            Panel.ZIndex="1"
+                            Background="#EEEEEE"
+                            CornerRadius="20">
+                            <!--  Any content or controls for user input (e.g., TextBox, ComboBox, etc.)  -->
+                            <!--  For example, using a TextBox as the search input  -->
+                            <TextBox
+                                Margin="5"
+                                VerticalContentAlignment="Center"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                FontSize="16" />
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="4"
+                                    Opacity="0.3"
+                                    ShadowDepth="4"
+                                    Color="#000000" />
+                            </Border.Effect>
+                        </Border>
+
+                    </Canvas>
+                </Grid>
+                <Border
+                    Grid.Row="1"
+                    Margin="9,10,0,17"
+                    Background="#949494"
+                    CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="4"
+                            Opacity="0.6"
+                            ShadowDepth="4"
+                            Color="#000000" />
+                    </Border.Effect>
+                    <Canvas>
+                        <RadioButton
+                            Width="162"
+                            Height="43"
+                            Margin="14,10,15,479"
+                            Command="{Binding HomeCommand}"
+                            Content="Home"
+                            FontFamily="Panton-Trial ExtraBold"
+                            FontSize="20"
+                            Foreground="#414141"
+                            Style="{StaticResource RoundedButtonStyle}" />
+                        <RadioButton
+                            Canvas.Left="14"
+                            Canvas.Top="65"
+                            Width="162"
+                            Height="43"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Command="{Binding NewNoteCommand}"
+                            Content="New Note"
+                            FontFamily="Panton-Trial ExtraBold"
+                            FontSize="20"
+                            Foreground="#414141"
+                            Style="{StaticResource RoundedButtonStyle}" />
+                        <RadioButton
+                            Canvas.Left="14"
+                            Canvas.Top="119"
+                            Width="162"
+                            Height="43"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Command="{Binding ViewAllCommand}"
+                            Content="View All Notes"
+                            FontFamily="Panton-Trial ExtraBold"
+                            FontSize="20"
+                            Foreground="#414141"
+                            Style="{StaticResource RoundedButtonStyle}" />
+
+                    </Canvas>
+
+                </Border>
+
+                <ContentControl
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Margin="10,0,10,0">
+                    <ContentControl.Resources>
+                        <DataTemplate DataType="{x:Type viewModel:Main_ViewModel}">
+                            <view:NewNotePage />
+                        </DataTemplate>
+                    </ContentControl.Resources>
+                    <ContentControl.Content>
+                        <ContentPresenter Margin="0,10,0,17" Content="{Binding CurrentView}" />
+                    </ContentControl.Content>
+                </ContentControl>
+                <Image
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Width="675"
+                    Height="146"
+                    Margin="75,409,0,4"
+                    Source="/Images/ThoughtBubble.png"
+                    Visibility="{Binding IsThoughtBubbleVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
             </Grid>
-            <Border
-                Grid.Row="1"
-                Margin="9,10,0,17"
-                Background="#949494"
-                CornerRadius="10">
-                <Border.Effect>
-                    <DropShadowEffect
-                        BlurRadius="4"
-                        Opacity="0.6"
-                        ShadowDepth="4"
-                        Color="#000000" />
-                </Border.Effect>
-                <Canvas>
-                    <RadioButton
-                        Width="162"
-                        Height="43"
-                        Margin="14,10,15,479"
-                        Command="{Binding HomeCommand}"
-                        Content="Home"
-                        FontFamily="Panton-Trial ExtraBold"
-                        FontSize="20"
-                        Foreground="#414141"
-                        Style="{StaticResource RoundedButtonStyle}" />
-                    <RadioButton
-                        Canvas.Left="14"
-                        Canvas.Top="65"
-                        Width="162"
-                        Height="43"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Top"
-                        Command="{Binding NewNoteCommand}"
-                        Content="New Note"
-                        FontFamily="Panton-Trial ExtraBold"
-                        FontSize="20"
-                        Foreground="#414141"
-                        Style="{StaticResource RoundedButtonStyle}" />
-                    <RadioButton
-                        Canvas.Left="14"
-                        Canvas.Top="119"
-                        Width="162"
-                        Height="43"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Command="{Binding ViewAllCommand}"
-                        Content="View All Notes"
-                        FontFamily="Panton-Trial ExtraBold"
-                        FontSize="20"
-                        Foreground="#414141"
-                        Style="{StaticResource RoundedButtonStyle}" />
 
-                </Canvas>
-
-            </Border>
-
-            <ContentControl
-                Grid.Row="1"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
-                Margin="10,0,10,0">
-                <ContentControl.Resources>
-                    <DataTemplate DataType="{x:Type viewModel:Main_ViewModel}">
-                        <view:NewNotePage />
-                    </DataTemplate>
-                </ContentControl.Resources>
-                <ContentControl.Content>
-                    <ContentPresenter Margin="0,10,0,17" Content="{Binding CurrentView}" />
-                </ContentControl.Content>
-            </ContentControl>
-
-        </Grid>
-
-    </Border>
+        </Border>
     </Grid>
 </Window>
