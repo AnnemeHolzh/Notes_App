@@ -26,8 +26,9 @@
                 <ItemsControl ItemsSource="{Binding Notes}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <RadioButton Content="{Binding Notes.GetTitle}"
-                                         Click="RadioButton_Click"/>
+                            <Button Content="{Binding Notes.GetTitle}"
+                                         Click="Button_Click"/>
+                            <!--Add Style to this button please-->
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
