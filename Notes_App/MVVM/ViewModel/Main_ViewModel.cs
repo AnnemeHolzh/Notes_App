@@ -15,6 +15,10 @@ namespace Notes_App.MVVM.ViewModel
         public Core.RelayCommandClass NewNoteCommand { get; set; }
 
         public NewNotePage NewNoteVM { get; set; }
+
+        public Core.RelayCommandClass ViewAllCommand { get; set; }
+
+        public ViewAllNotesView ViewAllVM { get; set; }
         public Core.RelayCommandClass HomeCommand { get; set; }
 
         public Home_View HomeVM { get; set; }
@@ -34,6 +38,8 @@ namespace Notes_App.MVVM.ViewModel
         {
             // Instantiate view models for the home page, all recipes page, and new recipe page
             HomeVM = new Home_View();
+            NewNoteVM = new NewNotePage();
+            ViewAllVM = new ViewAllNotesView(); 
 
             // Set the current view to the home page initially
             CurrentView = HomeVM;
@@ -42,6 +48,16 @@ namespace Notes_App.MVVM.ViewModel
             HomeCommand = new Core.RelayCommandClass(o =>
             {
                 CurrentView = HomeVM;
+            });
+
+            NewNoteCommand = new Core.RelayCommandClass(o =>
+            {
+                CurrentView = NewNoteVM;
+            });
+
+            ViewAllCommand = new Core.RelayCommandClass(o =>
+            {
+                CurrentView = ViewAllVM;
             });
 
         }
