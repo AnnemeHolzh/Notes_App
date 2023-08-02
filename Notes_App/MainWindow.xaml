@@ -141,7 +141,8 @@
                         FontFamily="Panton-Trial ExtraBold"
                         FontSize="20"
                         Foreground="#414141"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" 
+                        Command="{Binding HomeCommand}"/>
                     <RadioButton
                         Canvas.Left="14"
                         Canvas.Top="65"
@@ -153,7 +154,8 @@
                         FontFamily="Panton-Trial ExtraBold"
                         FontSize="20"
                         Foreground="#414141"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" 
+                        Command="{Binding NewNoteCommand}"/>
                     <RadioButton
                         Canvas.Left="14"
                         Canvas.Top="119"
@@ -165,7 +167,8 @@
                         FontFamily="Panton-Trial ExtraBold"
                         FontSize="20"
                         Foreground="#414141"
-                        Style="{StaticResource RoundedButtonStyle}" />
+                        Style="{StaticResource RoundedButtonStyle}" 
+                        Command="{Binding ViewAllCommand}"/>
 
                 </Canvas>
 
