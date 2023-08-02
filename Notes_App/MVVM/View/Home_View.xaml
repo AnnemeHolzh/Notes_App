@@ -8,6 +8,17 @@
     d:DesignHeight="546"
     d:DesignWidth="733"
     mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/RecentNote_TitleStyle.xaml" />
+                <ResourceDictionary Source="/Styles/RecentNote_BodyStyle.xaml" />
+                <!--  Add more Resource Dictionaries if needed  -->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
     <Border Background="#949494" CornerRadius="10">
         <Border.Effect>
             <DropShadowEffect
@@ -19,47 +30,77 @@
         <Canvas>
             <Image
                 Canvas.Left="20"
-                Canvas.Top="32"
-                Width="187.47"
-                Height="178.84"
+                Canvas.Top="12"
+                Width="187"
+                Height="179"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Source="/Images/Note_Grey.png" />
 
             <Image
-                Canvas.Left="268.5"
-                Canvas.Top="32"
-                Width="187.47"
-                Height="178.84"
+                Canvas.Left="268"
+                Canvas.Top="12"
+                Width="188"
+                Height="179"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Source="/Images/Note_Mint.png" />
 
             <Image
-                Canvas.Left="516.5"
-                Canvas.Top="32"
-                Width="187.47"
-                Height="178.84"
+                Canvas.Left="516"
+                Canvas.Top="12"
+                Width="188"
+                Height="179"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Source="/Images/Note_Yellow.png" />
 
 
             <Image
                 Canvas.Left="20"
-                Canvas.Top="244"
-                Width="187.47"
-                Height="178.84"
+                Canvas.Top="224"
+                Width="187"
+                Height="179"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Source="/Images/Note_DarkBlue.png" />
 
 
             <Image
-                Canvas.Left="268.5"
-                Canvas.Top="244"
-                Width="187.47"
-                Height="178.84"
+                Canvas.Left="268"
+                Canvas.Top="224"
+                Width="188"
+                Height="179"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Source="/Images/Note_Orange.png" />
 
             <Image
-                Canvas.Left="516.5"
-                Canvas.Top="244"
-                Width="187.47"
-                Height="178.84"
+                Canvas.Left="516"
+                Canvas.Top="224"
+                Width="188"
+                Height="179"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Source="/Images/Note_LightBlue.png" />
+            <TextBlock
+                Canvas.Left="35"
+                Canvas.Top="82"
+                Width="157"
+                Height="75"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Text="Note content blah bla blah blah blah" 
+                Style="{StaticResource RecentTextBody}"/>
+            <TextBlock x:Name="GreyNote_Title"
+                Canvas.Left="94"
+                Canvas.Top="24"
+                Width="104"
+                Height="24"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Text="Note Title" 
+                Style="{StaticResource RecentTextTitle}"/>
 
 
         </Canvas>

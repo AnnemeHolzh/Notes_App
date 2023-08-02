@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="RecentTextBody" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="/Fonts/#Panton-Trial Light" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="Foreground" Value="#414141" />
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontWeight" Value="Regular" />
+        <!--  Add more customizations as needed  -->
+    </Style>
+</ResourceDictionary>
