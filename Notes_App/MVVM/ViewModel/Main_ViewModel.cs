@@ -57,6 +57,7 @@ namespace Notes_App.MVVM.ViewModel
 
             ViewAllCommand = new Core.RelayCommandClass(o =>
             {
+                ViewAllVM.RefreshData();
                 CurrentView = ViewAllVM;
             });
 

@@ -1,6 +1,7 @@
 ﻿using Notes_App.Core;
 using Notes_App.MVVM.Model;
 using System;
+using System.Windows;
 
 namespace Notes_App.MVVM.ViewModel
 {
@@ -87,7 +88,7 @@ namespace Notes_App.MVVM.ViewModel
                 NoteTitle = this.NoteTitle,
                 NoteContent = this.NoteContent,
             };
-
+            MessageBox.Show(this.NoteTitle + " " + this.NoteContent);
             NotesListClass.AddNote(note);
             this.ClearNote();
         }

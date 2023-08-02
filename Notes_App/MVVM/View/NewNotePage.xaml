@@ -41,7 +41,8 @@
             Height="33"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Content="Save Note" />
+            Content="Save Note" 
+            Command="{Binding AddNoteCommand}"/>
         <Button
             Canvas.Left="373"
             Canvas.Top="419"

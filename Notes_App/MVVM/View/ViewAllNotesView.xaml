@@ -11,42 +11,36 @@
     <UserControl.DataContext>
         <viewModel:ViewAllNotesViewModel/>
     </UserControl.DataContext>
-    
+
     <ScrollViewer>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <StackPanel Name="NotesCollomn1"
+            <StackPanel Name="buttonContainer1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
                         Grid.Column="0">
-
-                <ItemsControl ItemsSource="{Binding Notes}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Button Content="{Binding Notes.GetTitle}"
-                                         Click="Button_Click"/>
-                            <!--Add Style to this button please-->
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-
-
+                <!-- Buttons will be added here dynamically -->
             </StackPanel>
-
-            <StackPanel Name="NotesCollomn2"
+            
+            <StackPanel Name="buttonContainer2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
                         Grid.Column="1">
-
+                <!-- Buttons will be added here dynamically -->
             </StackPanel>
-
-            <StackPanel Name="NotesCollomn3"
+            
+            <StackPanel Name="buttonContainer3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
                         Grid.Column="2">
-
+                <!-- Buttons will be added here dynamically -->
             </StackPanel>
-        
 
-    </Grid>
+        </Grid>
     </ScrollViewer>
 </UserControl>
