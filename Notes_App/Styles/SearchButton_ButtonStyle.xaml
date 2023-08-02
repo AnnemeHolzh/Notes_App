@@ -12,7 +12,7 @@
                     <Border
                     x:Name="MainBorder"
                     Background="{TemplateBinding Background}"
-                    CornerRadius="20"
+                    CornerRadius="32"
                     Padding="10">
                         <ContentPresenter
                         HorizontalAlignment="Center"
@@ -27,12 +27,12 @@
                             <DoubleAnimation
                             Storyboard.TargetName="MainBorder"
                             Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                            To="0.95"
+                            To="0.97"
                             Duration="0:0:0.1" />
                             <DoubleAnimation
                             Storyboard.TargetName="MainBorder"
                             Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                            To="0.95"
+                            To="0.97"
                             Duration="0:0:0.1" />
                         </Storyboard>
                         <Storyboard x:Key="HoverAnimationReverse">
@@ -51,12 +51,12 @@
                             <DoubleAnimation
                             Storyboard.TargetName="MainBorder"
                             Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                            To="0.9"
+                            To="0.95"
                             Duration="0:0:0.1" />
                             <DoubleAnimation
                             Storyboard.TargetName="MainBorder"
                             Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                            To="0.9"
+                            To="0.95"
                             Duration="0:0:0.1" />
                         </Storyboard>
                         <Storyboard x:Key="ExitHoverAnimation">

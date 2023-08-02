@@ -17,6 +17,7 @@ namespace Notes_App.MVVM.ViewModel
 {
     public class Main_ViewModel : ObservableObjectsClass, INotifyPropertyChanged
     {
+
         private bool isThoughtBubbleVisible;
         public bool IsThoughtBubbleVisible
         {
