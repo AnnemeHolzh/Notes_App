@@ -15,7 +15,7 @@ namespace Notes_App.MVVM.View
 
         private ObservableCollection<NotesClass> notes;
 
-        Style style = Application.Current.FindResource("Main_buttonStyle") as Style;
+        //Style style = Application.Current.FindResource("Main_ButtonStyle.xaml") as Style; this ithe line that sets the style for the buttos but it does not work at the moment
 
 
 
@@ -42,8 +42,8 @@ namespace Notes_App.MVVM.View
             {
                 Button button = new Button();
                 button.Content = $"{note.GetTitle()}";
-                button.Click += Button_Click; // Attach a click event handler (optional)
-                button.Style = style;
+                button.Click += Button_Click;
+                //button.Style = style;
                 buttonContainer1.Children.Add(button);
             }
         }
