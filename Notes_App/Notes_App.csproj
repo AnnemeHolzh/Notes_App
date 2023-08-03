@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MVVM\Model\FolderClass.cs" />
     <Compile Include="UI_Code\BooleanToVisibilityConverter.cs" />
     <Compile Include="UI_Code\RandomColorConverter.cs" />
     <Page Include="MainWindow.xaml">
