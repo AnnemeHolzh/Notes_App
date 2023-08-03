@@ -4,16 +4,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Notes_App.MVVM.View"
-    xmlns:viewModel="clr-namespace:Notes_App.MVVM.ViewModel"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Notes_App.MVVM.ViewModel"
     Width="733"
     d:DesignHeight="546"
     Background="#949494"
     mc:Ignorable="d">
 
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Button_ButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
     <UserControl.DataContext>
-        <viewModel:NewNote_ViewModel/>
+        <viewModel:NewNote_ViewModel />
     </UserControl.DataContext>
+
 
     <Canvas>
         <TextBox
@@ -41,8 +51,9 @@
             Height="33"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Content="Save Note" 
-            Command="{Binding AddNoteCommand}"/>
+            Command="{Binding AddNoteCommand}"
+             Style="{StaticResource AppButtonStyle}"
+            Content="Save Note" />
         <Button
             Canvas.Left="373"
             Canvas.Top="419"
@@ -50,8 +61,9 @@
             Height="33"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Content="Clear" />
-        <!--You can remove this btn the clear functionruns automaticly after adding a note-->
+            Content="Clear"
+            Style="{StaticResource AppButtonStyle}" />
+        <!--  You can remove this btn the clear functionruns automaticly after adding a note  -->
 
     </Canvas>
 </UserControl>
