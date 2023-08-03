@@ -15,7 +15,7 @@ namespace Notes_App.MVVM.View
 
         private ObservableCollection<NotesClass> notes;
 
-        //Style style = Application.Current.FindResource("Main_ButtonStyle.xaml") as Style; this ithe line that sets the style for the buttos but it does not work at the moment
+        Style style = Application.Current.FindResource("Button_ButtonStyle.xaml") as Style; //this ithe line that sets the style for the buttos but it does not work at the moment
 
 
 
