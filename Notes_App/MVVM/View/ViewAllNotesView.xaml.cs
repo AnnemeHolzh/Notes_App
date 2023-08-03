@@ -15,6 +15,10 @@ namespace Notes_App.MVVM.View
 
         private ObservableCollection<NotesClass> notes;
 
+        Style style = Application.Current.FindResource("Main_buttonStyle") as Style;
+
+
+
         /// <summary>
         /// constructor
         /// </summary>
@@ -39,6 +43,7 @@ namespace Notes_App.MVVM.View
                 Button button = new Button();
                 button.Content = $"{note.GetTitle()}";
                 button.Click += Button_Click; // Attach a click event handler (optional)
+                button.Style = style;
                 buttonContainer1.Children.Add(button);
             }
         }
