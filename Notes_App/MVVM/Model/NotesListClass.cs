@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace Notes_App.MVVM.Model
 {
@@ -63,6 +64,25 @@ namespace Notes_App.MVVM.Model
             NotesList.Remove(note);
         }
         //___________________________________________________________________________________________________________
+
+        public static ObservableCollection<NotesClass> homeDisplay()
+        {
+            // sort noteslist last edited
+            var sortedNotes = new ObservableCollection<NotesClass>(NotesList.OrderBy(note => note.lastEdited));
+
+            //add top 6 to OC
+            var HomeSix = new ObservableCollection<NotesClass>();
+            for (var i = 0; i < 6; i++) 
+            {
+                HomeSix.Add(sortedNotes[i]);
+            }
+
+            //return OC
+            return HomeSix;
+        }
+
+
+
     }
 }
 //____________________________________EOF_________________________________________________________________________
