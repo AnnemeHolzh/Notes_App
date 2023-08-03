@@ -15,10 +15,6 @@ namespace Notes_App.MVVM.View
 
         private ObservableCollection<NotesClass> notes;
 
-        //Style style = Application.Current.FindResource("Button_ButtonStyle.xaml") as Style; //this is the line that sets the style for the buttons but it does not work at the moment
-
-
-
         /// <summary>
         /// constructor
         /// </summary>

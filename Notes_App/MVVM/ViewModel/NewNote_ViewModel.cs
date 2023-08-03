@@ -88,7 +88,6 @@ namespace Notes_App.MVVM.ViewModel
                 NoteTitle = this.NoteTitle,
                 NoteContent = this.NoteContent,
             };
-            MessageBox.Show(this.NoteTitle + " " + this.NoteContent);
             NotesListClass.AddNote(note);
             this.ClearNote();
         }

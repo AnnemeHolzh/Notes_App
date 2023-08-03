@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Notes_App.MVVM.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,25 @@ namespace Notes_App.MVVM.View
         {
             InitializeComponent();
         }
+
+        public void AutoSave ()
+        {
+            var title = TitleTB.Text;
+            var content = ContentTB.Text;
+
+            if (title != String.Empty && content != String.Empty) 
+            {
+                var note = new NotesClass
+                {
+                    NoteTitle = title,
+                    NoteContent = content,
+                };
+                NotesListClass.AddNote(note);
+                TitleTB.Text = String.Empty;
+                ContentTB.Text = String.Empty;
+            }
+        }
+
+
     }
 }

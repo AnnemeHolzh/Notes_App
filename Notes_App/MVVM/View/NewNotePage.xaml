@@ -34,6 +34,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding NoteTitle}"
+            Name="TitleTB"
             TextWrapping="Wrap" />
         <TextBox
             Canvas.Left="10"
@@ -43,6 +44,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Text="{Binding NoteContent}"
+            Name="ContentTB"
             TextWrapping="Wrap" />
         <Button
             Canvas.Left="534"
