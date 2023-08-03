@@ -83,7 +83,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 Source="/Images/Note_LightBlue.png" />
-            <TextBlock
+            <TextBlock x:Name="GreyNote_Body"
                 Canvas.Left="35"
                 Canvas.Top="82"
                 Width="157"
@@ -101,6 +101,80 @@
                 VerticalAlignment="Center"
                 Text="Note Title" 
                 Style="{StaticResource RecentTextTitle}"/>
+            <TextBlock x:Name="MintNote_Body"
+                Canvas.Left="283"
+                Canvas.Top="82"
+                Width="157"
+                Height="75"
+                Text="Note content blah bla blah blah blah" 
+                Style="{StaticResource RecentTextBody}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="MintNote_Title"
+                Canvas.Left="342"
+                Canvas.Top="24"
+                Width="104"
+                Height="24"
+                Text="Note Title" 
+                Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="YellowNote_Body"
+                Canvas.Left="540"
+                Canvas.Top="82"
+                Width="157"
+                Height="75"
+                Text="Note content blah bla blah blah blah" 
+                Style="{StaticResource RecentTextBody}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="YellowNote_Title"
+                Canvas.Left="599"
+                Canvas.Top="24"
+                Width="92"
+                Height="24"
+                Text="Note Title" 
+                Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="DarkBlueNote_Body"
+                Canvas.Left="35"
+                Canvas.Top="292"
+                Width="157"
+                Height="75"
+                Text="Note content blah bla blah blah blah" 
+                       Foreground="#ececec"
+                Style="{StaticResource RecentTextBody}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock x:Name="DarkBlueNote_Title"
+                Canvas.Left="94"
+                Canvas.Top="234"
+                Width="104"
+                Height="24"
+                Text="Note Title" 
+                       Foreground="#ececec"
+                Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock x:Name="OrangeNote_Body"
+                Canvas.Left="283"
+                Canvas.Top="292"
+                Width="157"
+                Height="75"
+                       Foreground="#ececec"
+                Text="Note content blah bla blah blah blah" 
+                Style="{StaticResource RecentTextBody}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="OrangeNote_Title"
+                Canvas.Left="342"
+                Canvas.Top="234"
+                Width="104"
+                Height="24"
+                Text="Note Title" 
+                       Foreground="#ececec"
+                Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="LightBlueNote_Body"
+                Canvas.Left="534"
+                Canvas.Top="292"
+                Width="157"
+                Height="75"
+                Text="Note content blah bla blah blah blah" 
+                Style="{StaticResource RecentTextBody}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="LightBlueNote_Title"
+                Canvas.Left="593"
+                Canvas.Top="234"
+                Width="104"
+                Height="24"
+                Text="Note Title" 
+                Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
 
         </Canvas>
