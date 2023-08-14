@@ -212,6 +212,19 @@
                     Margin="75,409,0,4"
                     Source="/Images/ThoughtBubble.png"
                     Visibility="{Binding IsThoughtBubbleVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="2"
+                           Width="660"
+                           Height="100"
+                           Margin="90,460,0,0"
+                           Background="Transparent"
+                           TextAlignment="Center"
+                           Visibility="{Binding IsThoughtBubbleVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                           Name="ThoughtCloudTB"/>
+                
             </Grid>
 
         </Border>

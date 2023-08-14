@@ -42,6 +42,17 @@ namespace Notes_App.MVVM.View
                 TitleTB.Text = String.Empty;
                 ContentTB.Text = String.Empty;
             }
+            else if (content != String.Empty)
+            {
+                var note = new NotesClass
+                {
+                    NoteTitle = "Untitled",
+                    NoteContent = content,
+                };
+                NotesListClass.AddNote(note);
+                TitleTB.Text = String.Empty;
+                ContentTB.Text = String.Empty;
+            }
         }
 
 
