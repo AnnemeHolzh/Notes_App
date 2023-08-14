@@ -72,16 +72,38 @@ namespace Notes_App.MVVM.Model
 
             //add top 6 to OC
             var HomeSix = new ObservableCollection<NotesClass>();
-            for (var i = 0; i < 6; i++) 
-            {
-                HomeSix.Add(sortedNotes[i]);
-            }
 
+            var DefaultTitle = "Title";
+            var DefaultContent = "Make more notes to display here";
+
+            if (sortedNotes.Any())
+            {
+                for (var i = 0; i < 6; i++)
+                {
+                    if (i < sortedNotes.Count)
+                    {
+                        HomeSix.Add(sortedNotes[i]);
+                    }
+                    else
+                    {
+                        var defaultNote = new NotesClass(DefaultTitle, DefaultContent);
+                        HomeSix.Add(defaultNote);
+                    }
+                }
+            }
+            else
+            {
+                for (var i = 0; i < 6; i++)
+                {
+                    var defaultNote = new NotesClass(DefaultTitle, DefaultContent);
+                    HomeSix.Add(defaultNote);
+                }
+            }
             //return OC
             return HomeSix;
         }
 
-        
+
 
     }
 }

@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MVVM\Model\FolderClass.cs" />
+    <Compile Include="MVVM\Model\FolderListClass.cs" />
+    <Compile Include="MVVM\ViewModel\Home_ViewModel.cs" />
     <Compile Include="UI_Code\BooleanToVisibilityConverter.cs" />
     <Compile Include="UI_Code\RandomColorConverter.cs" />
     <Page Include="MainWindow.xaml">

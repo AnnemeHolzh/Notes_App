@@ -17,6 +17,9 @@
             <DataTemplate DataType="{x:Type viewModel:NewNote_ViewModel}">
                 <view:NewNotePage/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:Home_ViewModel}">
+                <view:Home_View/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

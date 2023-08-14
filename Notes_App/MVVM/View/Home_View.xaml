@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Notes_App.MVVM.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Notes_App.MVVM.ViewModel"
     d:DesignHeight="546"
     d:DesignWidth="733"
     mc:Ignorable="d">
@@ -18,6 +19,9 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
+    <UserControl.DataContext>
+        <viewModel:Home_ViewModel />
+    </UserControl.DataContext>
 
     <Border Background="#949494" CornerRadius="10">
         <Border.Effect>
@@ -83,98 +87,111 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 Source="/Images/Note_LightBlue.png" />
-            <TextBlock x:Name="GreyNote_Body"
+            
+            <TextBlock Name="GreyNote_Body"
                 Canvas.Left="35"
                 Canvas.Top="82"
                 Width="157"
                 Height="75"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                Text="Note content blah bla blah blah blah" 
+                Text="{Binding HomeNotes[0].NoteContent}"
                 Style="{StaticResource RecentTextBody}"/>
-            <TextBlock x:Name="GreyNote_Title"
+            
+            <TextBlock Name="GreyNote_Title"
                 Canvas.Left="94"
                 Canvas.Top="24"
                 Width="104"
                 Height="24"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
-                Text="Note Title" 
+                Text="{Binding HomeNotes[0].NoteTitle}" 
                 Style="{StaticResource RecentTextTitle}"/>
-            <TextBlock x:Name="MintNote_Body"
+            
+            <TextBlock Name="MintNote_Body"
                 Canvas.Left="283"
                 Canvas.Top="82"
                 Width="157"
                 Height="75"
-                Text="Note content blah bla blah blah blah" 
+                Text="{Binding HomeNotes[1].NoteContent}" 
                 Style="{StaticResource RecentTextBody}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="MintNote_Title"
+            
+            <TextBlock Name="MintNote_Title"
                 Canvas.Left="342"
                 Canvas.Top="24"
                 Width="104"
                 Height="24"
-                Text="Note Title" 
+                Text="{Binding HomeNotes[1].NoteTitle}" 
                 Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="YellowNote_Body"
+            
+            <TextBlock Name="YellowNote_Body"
                 Canvas.Left="540"
                 Canvas.Top="82"
                 Width="157"
                 Height="75"
-                Text="Note content blah bla blah blah blah" 
+                Text="{Binding HomeNotes[2].NoteContent}" 
                 Style="{StaticResource RecentTextBody}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="YellowNote_Title"
+            
+            <TextBlock Name="YellowNote_Title"
                 Canvas.Left="599"
                 Canvas.Top="24"
                 Width="92"
                 Height="24"
-                Text="Note Title" 
+                Text="{Binding HomeNotes[2].NoteTitle}" 
                 Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="DarkBlueNote_Body"
+            
+            <TextBlock Name="DarkBlueNote_Body"
                 Canvas.Left="35"
                 Canvas.Top="292"
                 Width="157"
                 Height="75"
-                Text="Note content blah bla blah blah blah" 
+                Text="{Binding HomeNotes[3].NoteContent}" 
                        Foreground="#ececec"
                 Style="{StaticResource RecentTextBody}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBlock x:Name="DarkBlueNote_Title"
+            
+            <TextBlock Name="DarkBlueNote_Title"
                 Canvas.Left="94"
                 Canvas.Top="234"
                 Width="104"
                 Height="24"
-                Text="Note Title" 
+                Text="{Binding HomeNotes[3].NoteTitle}" 
                        Foreground="#ececec"
                 Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBlock x:Name="OrangeNote_Body"
+            
+            <TextBlock Name="OrangeNote_Body"
                 Canvas.Left="283"
                 Canvas.Top="292"
                 Width="157"
                 Height="75"
                        Foreground="#ececec"
-                Text="Note content blah bla blah blah blah" 
+                Text="{Binding HomeNotes[4].NoteContent}" 
                 Style="{StaticResource RecentTextBody}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="OrangeNote_Title"
+            
+            <TextBlock Name="OrangeNote_Title"
                 Canvas.Left="342"
                 Canvas.Top="234"
                 Width="104"
                 Height="24"
-                Text="Note Title" 
+                Text="{Binding HomeNotes[4].NoteTitle}" 
                        Foreground="#ececec"
                 Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="LightBlueNote_Body"
+            
+            <TextBlock Name="LightBlueNote_Body"
                 Canvas.Left="534"
                 Canvas.Top="292"
                 Width="157"
                 Height="75"
-                Text="Note content blah bla blah blah blah" 
+                Text="{Binding HomeNotes[5].NoteContent}" 
                 Style="{StaticResource RecentTextBody}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="LightBlueNote_Title"
+            
+            <TextBlock Name="LightBlueNote_Title"
                 Canvas.Left="593"
                 Canvas.Top="234"
                 Width="104"
                 Height="24"
-                Text="Note Title" 
+                Text="{Binding HomeNotes[5].NoteTitle}" 
                 Style="{StaticResource RecentTextTitle}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            
 
 
         </Canvas>

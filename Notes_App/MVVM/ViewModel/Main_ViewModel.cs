@@ -76,6 +76,7 @@ namespace Notes_App.MVVM.ViewModel
             // Assign commands to navigate to different views
             HomeCommand = new Core.RelayCommandClass(o =>
             {
+                HomeVM.reset();
                 NewNoteVM.AutoSave();
                 CurrentView = HomeVM;
                 IsThoughtBubbleVisible = true;
