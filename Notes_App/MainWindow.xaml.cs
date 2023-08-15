@@ -26,7 +26,6 @@ namespace Notes_App
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int Index { get; set; }
 
         private DispatcherTimer timer;
 
@@ -47,7 +46,9 @@ namespace Notes_App
         private void displayQuotesTimer()
         {
             quotes = new QuotesListClass();
-            ThoughtCloudTB.Text = quotes.DisplayQuote(0);
+            Random random = new Random();
+            var Index = random.Next(30);
+            ThoughtCloudTB.Text = quotes.DisplayQuote(Index);
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(15);
             timer.Tick += Timer_Tick;
@@ -57,8 +58,8 @@ namespace Notes_App
         private void Timer_Tick(object sender, EventArgs e)
         {
             quotes = new QuotesListClass();
-
-            Index = (Index + 1) % quotes.QuotesListCount();
+            Random random = new Random();
+            var Index = random.Next(30);
 
             ThoughtCloudTB.Text = quotes.DisplayQuote(Index);
         }

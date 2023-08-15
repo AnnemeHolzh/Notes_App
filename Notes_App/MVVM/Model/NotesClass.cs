@@ -69,6 +69,16 @@ namespace Notes_App.MVVM.Model
         //___________________________________________________________________________________________________________
 
         /// <summary>
+        /// sets the notes Title to the newContent parameter
+        /// </summary>
+        /// <param name="newTitle"></param>
+        public void SetTitle(string newTitle)
+        {
+            this.NoteTitle = newTitle;
+        }
+        //___________________________________________________________________________________________________________
+
+        /// <summary>
         /// returns the notes content
         /// </summary>
         /// <returns></returns>

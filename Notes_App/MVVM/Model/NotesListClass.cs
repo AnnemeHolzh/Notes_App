@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Notes_App.MVVM.Model
 {
@@ -41,6 +42,11 @@ namespace Notes_App.MVVM.Model
         /// <param name="note"></param>
         public static void AddNote(NotesClass note)
         {
+            if(string.IsNullOrEmpty(note.NoteTitle))
+            {
+                note.SetTitle("Untitled");
+            }
+
             NotesList.Add(note);
         }
         //___________________________________________________________________________________________________________

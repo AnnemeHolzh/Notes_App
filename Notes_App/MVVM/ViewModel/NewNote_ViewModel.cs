@@ -1,7 +1,6 @@
 ﻿using Notes_App.Core;
 using Notes_App.MVVM.Model;
 using System;
-using System.Windows;
 
 namespace Notes_App.MVVM.ViewModel
 {
@@ -83,13 +82,19 @@ namespace Notes_App.MVVM.ViewModel
         /// <param name="p"></param>
         private void AddNote(Object p)
         {
+
             var note = new NotesClass
             {
                 NoteTitle = this.NoteTitle,
                 NoteContent = this.NoteContent,
             };
-            NotesListClass.AddNote(note);
-            this.ClearNote();
+            if (!String.IsNullOrEmpty(note.NoteContent))
+            {
+                NotesListClass.AddNote(note);
+                this.ClearNote();
+            }
+
+
         }
         //___________________________________________________________________________________________________________
 
