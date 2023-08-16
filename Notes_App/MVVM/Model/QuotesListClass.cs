@@ -2,8 +2,18 @@
 
 namespace Notes_App.MVVM.Model
 {
+    /// <summary>
+    /// class used to store and print QuotesClass objects
+    /// </summary>
     internal class QuotesListClass
     {
+        //___________________________________________________________________________________________________________
+        //__________________________________________Parameters_______________________________________________________
+        //___________________________________________________________________________________________________________
+
+        /// <summary>
+        /// list used to store QuotesClass Objects
+        /// </summary>
         List<QuotesClass> quotesList = new List<QuotesClass>
             {
                 new QuotesClass("The first draft is just you telling yourself the story.", "Terry Pratchett"),
@@ -37,23 +47,37 @@ namespace Notes_App.MVVM.Model
                 new QuotesClass("Writing is the best way to talk without being interrupted.", "Jules Renard"),
                 new QuotesClass("I can shake off everything as I write; my sorrows disappear, my courage is reborn.", "Anne Frank")
             };
+        //___________________________________________________________________________________________________________
 
-
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public QuotesListClass()
         {
         }
+        //___________________________________________________________________________________________________________
 
+        /// <summary>
+        /// Method used to print the Quote in index id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public string DisplayQuote(int id)
         {
             var quote = quotesList[id].PrintQuote();
             return quote;
         }
+        //___________________________________________________________________________________________________________
 
+        /// <summary>
+        /// returns the amount of quotes stored in the quotesList 
+        /// </summary>
+        /// <returns></returns>
         public int QuotesListCount()
         {
             return quotesList.Count;
         }
-
+        //___________________________________________________________________________________________________________
     }
 }
 //____________________________________EOF_________________________________________________________________________

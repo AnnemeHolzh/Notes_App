@@ -1,18 +1,6 @@
 ﻿using Notes_App.MVVM.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Notes_App.MVVM.View
 {
@@ -21,17 +9,32 @@ namespace Notes_App.MVVM.View
     /// </summary>
     public partial class NewNotePage : UserControl
     {
+        //___________________________________________________________________________________________________________
+        //__________________________________________Constructors_____________________________________________________
+        //___________________________________________________________________________________________________________
+
+        /// <summary>
+        /// default constructor for initializing components
+        /// </summary>
         public NewNotePage()
         {
             InitializeComponent();
         }
+        //___________________________________________________________________________________________________________
 
-        public void AutoSave ()
+        //___________________________________________________________________________________________________________
+        //_____________________________________________Methods_______________________________________________________
+        //___________________________________________________________________________________________________________
+
+        /// <summary>
+        /// Method to save notes if the user navigates somewhere else
+        /// </summary>
+        public void AutoSave()
         {
             var title = TitleTB.Text;
             var content = ContentTB.Text;
 
-            if (title != String.Empty && content != String.Empty) 
+            if (title != String.Empty && content != String.Empty)
             {
                 var note = new NotesClass
                 {
@@ -54,7 +57,7 @@ namespace Notes_App.MVVM.View
                 ContentTB.Text = String.Empty;
             }
         }
-
-
+        //___________________________________________________________________________________________________________
     }
 }
+//____________________________________EOF_________________________________________________________________________

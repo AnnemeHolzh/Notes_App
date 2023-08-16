@@ -11,8 +11,19 @@ namespace Notes_App.MVVM.View
     /// </summary>
     public partial class ViewAllNotesView : UserControl
     {
+        //___________________________________________________________________________________________________________
+        //__________________________________________Parameters_______________________________________________________
+        //___________________________________________________________________________________________________________
 
+        /// <summary>
+        /// Observable collection to store all notes that need to be shown in the view all notes view
+        /// </summary>
         private ObservableCollection<NotesClass> notes;
+        //___________________________________________________________________________________________________________
+
+        //___________________________________________________________________________________________________________
+        //__________________________________________Constructors_____________________________________________________
+        //___________________________________________________________________________________________________________
 
         /// <summary>
         /// constructor
@@ -25,8 +36,16 @@ namespace Notes_App.MVVM.View
         }
         //___________________________________________________________________________________________________________
 
+        //___________________________________________________________________________________________________________
+        //_____________________________________________Methods_______________________________________________________
+        //___________________________________________________________________________________________________________
+
+        /// <summary>
+        /// method to make buttons on based on the contents of the notes observable collection
+        /// </summary>
         public void ButtonMaker()
         {
+            // clear all previously made buttons to ensure no duplicates
             if (buttonContainer1 != null)
             {
                 buttonContainer1.Children.Clear();
@@ -34,12 +53,13 @@ namespace Notes_App.MVVM.View
                 buttonContainer3.Children.Clear();
             }
 
-            var i = 0;
+            var i = 0;//counter used to sort buttons between the three button containers
 
             foreach (var note in notes)
             {
-                if (i < notes.Count)
+                if (i < notes.Count)// make sure that i never becomes more than the amount of notes in the collection
                 {
+                    //sorting the buttons between the containers
                     i++;
                     if (i == 1)
                     {
@@ -70,12 +90,16 @@ namespace Notes_App.MVVM.View
 
             }
         }
-
+        //___________________________________________________________________________________________________________
+        /// <summary>
+        /// method used to update the notes collection
+        /// </summary>
         public void RefreshData()
         {
             notes = new ObservableCollection<NotesClass>(NotesListClass.ReturnNotes());
             ButtonMaker();
         }
+        //___________________________________________________________________________________________________________
 
         /// <summary>
         /// Event handler for when a note is selected
@@ -99,6 +123,7 @@ namespace Notes_App.MVVM.View
                 }
             }
         }
+        //___________________________________________________________________________________________________________
     }
 }
 //____________________________________EOF_________________________________________________________________________
